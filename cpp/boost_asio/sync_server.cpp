@@ -15,7 +15,15 @@ int main (){
     for(;;){
         tcp::socket client_sock(is);
         acceptor.accept(client_sock);
-        string message="hello friend!";
+        string message="hello friend!\n";
+        char input[1000];
+        int bts_rcvd=boost::asio::read(client_sock, boost::asio::buffer((void*)input,sizeof(input)),boost::asio::transfer_at_least(1),err);
+        cout<<"Data size obtained: "<<bts_rcvd<<endl;
         boost::asio::write(client_sock, boost::asio::buffer(message), boost::asio::transfer_all(), err);
+        boost::asio::write(client_sock, boost::asio::buffer(input,bts_rcvd), boost::asio::transfer_all(), err);
+        message="plz send more data :)\n";
+        boost::asio::write(client_sock, boost::asio::buffer(message), boost::asio::transfer_all(), err);
+        bts_rcvd=boost::asio::read(client_sock, boost::asio::buffer((void*)input,sizeof(input)),boost::asio::transfer_at_least(1),err);
+        cout<<"Data size obtained: "<<bts_rcvd<<endl;
     }
 }
