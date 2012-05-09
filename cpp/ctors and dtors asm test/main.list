@@ -1,0 +1,322 @@
+GAS LISTING /tmp/ccgc8qRM.s 			page 1
+
+
+   1              		.file	"main.cpp"
+   2              		.section	.text._ZN4AzatC1Ev,"axG",@progbits,_ZN4AzatC1Ev,comdat
+   3              		.align 2
+   4              		.weak	_ZN4AzatC1Ev
+   6              	_ZN4AzatC1Ev:
+   7 0000 55       		pushl	%ebp
+   8 0001 89E5     		movl	%esp, %ebp
+   9 0003 8B4508   		movl	8(%ebp), %eax
+  10 0006 8B00     		movl	(%eax), %eax
+  11 0008 8D5001   		leal	1(%eax), %edx
+  12 000b 8B4508   		movl	8(%ebp), %eax
+  13 000e 8910     		movl	%edx, (%eax)
+  14 0010 5D       		popl	%ebp
+  15 0011 C3       		ret
+  17              		.section	.text._ZN4AzatD1Ev,"axG",@progbits,_ZN4AzatD1Ev,comdat
+  18              		.align 2
+  19              		.weak	_ZN4AzatD1Ev
+  21              	_ZN4AzatD1Ev:
+  22 0000 55       		pushl	%ebp
+  23 0001 89E5     		movl	%esp, %ebp
+  24 0003 8B4508   		movl	8(%ebp), %eax
+  25 0006 8B00     		movl	(%eax), %eax
+  26 0008 8D50FF   		leal	-1(%eax), %edx
+  27 000b 8B4508   		movl	8(%ebp), %eax
+  28 000e 8910     		movl	%edx, (%eax)
+  29 0010 5D       		popl	%ebp
+  30 0011 C3       		ret
+  32              		.section	.text._ZN4Azat5get_aEv,"axG",@progbits,_ZN4Azat5get_aEv,comdat
+  33              		.align 2
+  34              		.weak	_ZN4Azat5get_aEv
+  36              	_ZN4Azat5get_aEv:
+  37 0000 55       		pushl	%ebp
+  38 0001 89E5     		movl	%esp, %ebp
+  39 0003 8B4508   		movl	8(%ebp), %eax
+  40 0006 C7000500 		movl	$5, (%eax)
+  40      0000
+  41 000c 8B4508   		movl	8(%ebp), %eax
+  42 000f 8B00     		movl	(%eax), %eax
+  43 0011 5D       		popl	%ebp
+  44 0012 C3       		ret
+  46              		.text
+  47              	.globl _Z8pass_refR4Azat
+  49              	_Z8pass_refR4Azat:
+  50 0000 55       		pushl	%ebp
+  51 0001 89E5     		movl	%esp, %ebp
+  52 0003 8B4508   		movl	8(%ebp), %eax
+  53 0006 8B00     		movl	(%eax), %eax
+  54 0008 8D5001   		leal	1(%eax), %edx
+  55 000b 8B4508   		movl	8(%ebp), %eax
+  56 000e 8910     		movl	%edx, (%eax)
+  57 0010 5D       		popl	%ebp
+  58 0011 C3       		ret
+  60              	.globl _Z8pass_ptrP4Azat
+  62              	_Z8pass_ptrP4Azat:
+  63 0012 55       		pushl	%ebp
+  64 0013 89E5     		movl	%esp, %ebp
+  65 0015 5D       		popl	%ebp
+GAS LISTING /tmp/ccgc8qRM.s 			page 2
+
+
+  66 0016 C3       		ret
+  68              		.section	.text._ZN1BC1Ev,"axG",@progbits,_ZN1BC1Ev,comdat
+  69              		.align 2
+  70              		.weak	_ZN1BC1Ev
+  72              	_ZN1BC1Ev:
+  73 0000 55       		pushl	%ebp
+  74 0001 89E5     		movl	%esp, %ebp
+  75 0003 83EC18   		subl	$24, %esp
+  76 0006 8B4508   		movl	8(%ebp), %eax
+  77 0009 890424   		movl	%eax, (%esp)
+  78 000c E8FCFFFF 		call	_ZN4AzatC1Ev
+  78      FF
+  79 0011 C9       		leave
+  80 0012 C3       		ret
+  82              		.section	.text._ZN1BD1Ev,"axG",@progbits,_ZN1BD1Ev,comdat
+  83              		.align 2
+  84              		.weak	_ZN1BD1Ev
+  86              	_ZN1BD1Ev:
+  87 0000 55       		pushl	%ebp
+  88 0001 89E5     		movl	%esp, %ebp
+  89 0003 83EC18   		subl	$24, %esp
+  90 0006 8B4508   		movl	8(%ebp), %eax
+  91 0009 890424   		movl	%eax, (%esp)
+  92 000c E8FCFFFF 		call	_ZN4AzatD1Ev
+  92      FF
+  93 0011 C9       		leave
+  94 0012 C3       		ret
+  96              		.text
+  97              	.globl main
+  99              	main:
+ 100 0017 55       		pushl	%ebp
+ 101 0018 89E5     		movl	%esp, %ebp
+ 102 001a 83E4F0   		andl	$-16, %esp
+ 103 001d 53       		pushl	%ebx
+ 104 001e 83EC4C   		subl	$76, %esp
+ 105              	#APP
+ 106              	# 33 "main.cpp" 1
+   1              	class Azat {
+   2              	    public:
+   3              	    int a;
+   4              	    inline Azat(){++a;};
+   5              	    ~Azat(){--a;};
+   6              	    int get_a(){a=5;return a;};
+   7              	};
+   8              	
+   9              	class B {
+  10              	    public:
+  11              	        Azat aaa;
+  12              	        int b;
+  13              	        short bb;
+  14              	        char bc;
+  15              	};
+  16              	
+  17              	
+  18              	//typedef int A;
+  19              	
+  20              	void pass_ref(Azat& a_ref){
+GAS LISTING /tmp/ccgc8qRM.s 			page 3
+
+
+  21              	    ++a_ref.a;
+  22              	};
+  23              	
+  24              	void pass_ptr(Azat* a_ptr){
+  25              	//    --(*a_ptr);
+  26              	};
+  27              	
+  28              	//void pass_val(A a){
+  29              	//    ++a;
+  30              	//};
+  31              	
+  32              	int main(){
+  33 0021 90       	    asm("nop");//-----------
+  34              	    Azat aa;
+ 107              		nop
+ 108              	# 0 "" 2
+ 109              	#NO_APP
+ 110 0022 8D44243C 		leal	60(%esp), %eax
+ 111 0026 890424   		movl	%eax, (%esp)
+ 112 0029 E8FCFFFF 		call	_ZN4AzatC1Ev
+ 112      FF
+ 113              	#APP
+ 114              	# 35 "main.cpp" 1
+  35 002e 90       	    asm("nop");//-----------
+  36              	    char *c=new char[24];
+ 115              		nop
+ 116              	# 0 "" 2
+ 117              	#NO_APP
+ 118 002f C7042418 		movl	$24, (%esp)
+ 118      000000
+ 119 0036 E8FCFFFF 		call	_Znaj
+ 119      FF
+ 120 003b 89442438 		movl	%eax, 56(%esp)
+ 121              	#APP
+ 122              	# 37 "main.cpp" 1
+  37 003f 90       	    asm("nop");//-----------
+  38              	    Azat* k=new Azat();
+ 123              		nop
+ 124              	# 0 "" 2
+ 125              	#NO_APP
+ 126 0040 C7042404 		movl	$4, (%esp)
+ 126      000000
+ 127 0047 E8FCFFFF 		call	_Znwj
+ 127      FF
+ 128 004c 89C3     		movl	%eax, %ebx
+ 129 004e 89D8     		movl	%ebx, %eax
+ 130 0050 890424   		movl	%eax, (%esp)
+ 131 0053 E8FCFFFF 		call	_ZN4AzatC1Ev
+ 131      FF
+ 132 0058 895C2434 		movl	%ebx, 52(%esp)
+ 133              	#APP
+ 134              	# 39 "main.cpp" 1
+  39 005c 90       	    asm("nop");//-----------
+  40              	    B* b=new B();
+ 135              		nop
+ 136              	# 0 "" 2
+ 137              	#NO_APP
+GAS LISTING /tmp/ccgc8qRM.s 			page 4
+
+
+ 138 005d C704240C 		movl	$12, (%esp)
+ 138      000000
+ 139 0064 E8FCFFFF 		call	_Znwj
+ 139      FF
+ 140 0069 89C3     		movl	%eax, %ebx
+ 141 006b 89D8     		movl	%ebx, %eax
+ 142 006d C7000000 		movl	$0, (%eax)
+ 142      0000
+ 143 0073 C7400400 		movl	$0, 4(%eax)
+ 143      000000
+ 144 007a 66C74008 		movw	$0, 8(%eax)
+ 144      0000
+ 145 0080 C6400A00 		movb	$0, 10(%eax)
+ 146 0084 890424   		movl	%eax, (%esp)
+ 147 0087 E8FCFFFF 		call	_ZN1BC1Ev
+ 147      FF
+ 148 008c 895C2430 		movl	%ebx, 48(%esp)
+ 149              	#APP
+ 150              	# 41 "main.cpp" 1
+  41 0090 90       	    asm("nop");//-----------
+  42              	    B* bb=new B;
+ 151              		nop
+ 152              	# 0 "" 2
+ 153              	#NO_APP
+ 154 0091 C704240C 		movl	$12, (%esp)
+ 154      000000
+ 155 0098 E8FCFFFF 		call	_Znwj
+ 155      FF
+ 156 009d 89C3     		movl	%eax, %ebx
+ 157 009f 89D8     		movl	%ebx, %eax
+ 158 00a1 890424   		movl	%eax, (%esp)
+ 159 00a4 E8FCFFFF 		call	_ZN1BC1Ev
+ 159      FF
+ 160 00a9 895C242C 		movl	%ebx, 44(%esp)
+ 161              	#APP
+ 162              	# 43 "main.cpp" 1
+  43 00ad 90       	    asm("nop");//-----------
+  44              	    B bbb=*b;
+ 163              		nop
+ 164              	# 0 "" 2
+ 165              	#NO_APP
+ 166 00ae 8B442430 		movl	48(%esp), %eax
+ 167 00b2 8B10     		movl	(%eax), %edx
+ 168 00b4 8954241C 		movl	%edx, 28(%esp)
+ 169 00b8 8B5004   		movl	4(%eax), %edx
+ 170 00bb 89542420 		movl	%edx, 32(%esp)
+ 171 00bf 0FB75008 		movzwl	8(%eax), %edx
+ 172 00c3 66895424 		movw	%dx, 36(%esp)
+ 172      24
+ 173 00c8 0FB6400A 		movzbl	10(%eax), %eax
+ 174 00cc 88442426 		movb	%al, 38(%esp)
+ 175 00d0 8B44241C 		movl	28(%esp), %eax
+ 176 00d4 89442410 		movl	%eax, 16(%esp)
+ 177 00d8 8B442420 		movl	32(%esp), %eax
+ 178 00dc 89442414 		movl	%eax, 20(%esp)
+ 179 00e0 0FB74424 		movzwl	36(%esp), %eax
+ 179      24
+GAS LISTING /tmp/ccgc8qRM.s 			page 5
+
+
+ 180 00e5 66894424 		movw	%ax, 24(%esp)
+ 180      18
+ 181 00ea 0FB64424 		movzbl	38(%esp), %eax
+ 181      26
+ 182 00ef 8844241A 		movb	%al, 26(%esp)
+ 183              	#APP
+ 184              	# 46 "main.cpp" 1
+  45              	    B bbbb(bbb);
+  46 00f3 90       	    asm("nop");//-----------
+  47              	    asm("nop");//-----------
+ 185              		nop
+ 186              	# 0 "" 2
+ 187              	# 47 "main.cpp" 1
+  48              	    int z;
+ 188              		nop
+ 189              	# 0 "" 2
+ 190              	#NO_APP
+ 191 00f5 83442428 		addl	$1, 40(%esp)
+ 191      01
+ 192 00fa 8D44243C 		leal	60(%esp), %eax
+ 193 00fe 890424   		movl	%eax, (%esp)
+ 194 0101 E8FCFFFF 		call	_Z8pass_refR4Azat
+ 194      FF
+ 195 0106 C7442428 		movl	$7, 40(%esp)
+ 195      07000000 
+ 196 010e 8D44243C 		leal	60(%esp), %eax
+ 197 0112 890424   		movl	%eax, (%esp)
+ 198 0115 E8FCFFFF 		call	_Z8pass_ptrP4Azat
+ 198      FF
+ 199 011a C7442428 		movl	$8, 40(%esp)
+ 199      08000000 
+ 200 0122 8D44243C 		leal	60(%esp), %eax
+ 201 0126 890424   		movl	%eax, (%esp)
+ 202 0129 E8FCFFFF 		call	_ZN4Azat5get_aEv
+ 202      FF
+ 203 012e C7442428 		movl	$9, 40(%esp)
+ 203      09000000 
+ 204 0136 BB050000 		movl	$5, %ebx
+ 204      00
+ 205 013b 8D442410 		leal	16(%esp), %eax
+ 206 013f 890424   		movl	%eax, (%esp)
+ 207 0142 E8FCFFFF 		call	_ZN1BD1Ev
+ 207      FF
+ 208 0147 8D44241C 		leal	28(%esp), %eax
+ 209 014b 890424   		movl	%eax, (%esp)
+ 210 014e E8FCFFFF 		call	_ZN1BD1Ev
+ 210      FF
+ 211 0153 8D44243C 		leal	60(%esp), %eax
+ 212 0157 890424   		movl	%eax, (%esp)
+ 213 015a E8FCFFFF 		call	_ZN4AzatD1Ev
+ 213      FF
+ 214 015f 89D8     		movl	%ebx, %eax
+ 215 0161 83C44C   		addl	$76, %esp
+ 216 0164 5B       		popl	%ebx
+ 217 0165 89EC     		movl	%ebp, %esp
+ 218 0167 5D       		popl	%ebp
+ 219 0168 C3       		ret
+GAS LISTING /tmp/ccgc8qRM.s 			page 6
+
+
+ 221              		.ident	"GCC: (Ubuntu 4.4.3-4ubuntu5.1) 4.4.3"
+ 222              		.section	.note.GNU-stack,"",@progbits
+GAS LISTING /tmp/ccgc8qRM.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.cpp
+     /tmp/ccgc8qRM.s:6      .text._ZN4AzatC1Ev:0000000000000000 _ZN4AzatC1Ev
+     /tmp/ccgc8qRM.s:21     .text._ZN4AzatD1Ev:0000000000000000 _ZN4AzatD1Ev
+     /tmp/ccgc8qRM.s:36     .text._ZN4Azat5get_aEv:0000000000000000 _ZN4Azat5get_aEv
+     /tmp/ccgc8qRM.s:49     .text:0000000000000000 _Z8pass_refR4Azat
+     /tmp/ccgc8qRM.s:62     .text:0000000000000012 _Z8pass_ptrP4Azat
+     /tmp/ccgc8qRM.s:72     .text._ZN1BC1Ev:0000000000000000 _ZN1BC1Ev
+     /tmp/ccgc8qRM.s:86     .text._ZN1BD1Ev:0000000000000000 _ZN1BD1Ev
+     /tmp/ccgc8qRM.s:99     .text:0000000000000017 main
+
+UNDEFINED SYMBOLS
+_Znaj
+_Znwj
